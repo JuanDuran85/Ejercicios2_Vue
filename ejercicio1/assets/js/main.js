@@ -10,9 +10,21 @@ const vm = new Vue({
         onSale: true,
         details: ["80% cotton", "20% polyester", "Gender-neutral"],
         variants: [
-            {variantId: 2234, varianColor: "green"},
-            {variantId: 2235, varianColor: "blue"},
+            {variantId: 2234, varianColor: "green", variantImage: './assets/img/socks-green-onWhite.jpg'},
+            {variantId: 2235, varianColor: "blue", variantImage: './assets/img/socks-blue-onWhite.jpg'},
         ],
-        sizes: ['S', 'M', 'L', 'XL', 'XXL', 'XXXL']
-    }
+        sizes: ['S', 'M', 'L', 'XL', 'XXL', 'XXXL'],
+        cart: 0,
+    },
+    methods: {
+        addToCard(){
+            this.cart += 1
+        },
+        updateProduct(imageColor){
+            this.image = imageColor;
+        },
+        removeFromCart(){
+            this.cart -= 1
+        }
+    },
 });

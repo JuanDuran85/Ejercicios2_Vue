@@ -4,7 +4,7 @@ const vm = new Vue({
         product: 'Socks',
         description: 'A pair of warm, fuzzy socks',
         image: './assets/img/socks-green-onWhite.jpg',
-        inStock: false,
+        inStock: true,
         link: 'https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=socks',
         inventory: 10,
         onSale: true,

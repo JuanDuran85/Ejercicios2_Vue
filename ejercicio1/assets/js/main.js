@@ -1,6 +1,7 @@
 const vm = new Vue({
     el: "#app",
     data: {
+        brand: 'Shopping',
         product: 'Socks',
         description: 'A pair of warm, fuzzy socks',
         image: './assets/img/socks-green-onWhite.jpg',
@@ -25,6 +26,11 @@ const vm = new Vue({
         },
         removeFromCart(){
             this.cart -= 1
+        }
+    },
+    computed: {
+        title(){
+            return this.brand +" "+ this.product;
         }
     },
 });

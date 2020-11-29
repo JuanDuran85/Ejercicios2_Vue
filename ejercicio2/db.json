@@ -4,18 +4,18 @@
         "id": 5928101,
         "user": {
           "id": "abc123",
-          "name": "Adam"
+          "name": "Constance"
         },
         "category": "animal welfare",
-        "organizer": "Adam",
-        "title": "Cat Cabaret",
+        "organizer": "Presley",
+        "title": "voluptates-neque-qui",
         "description": "Yay felines!",
         "location": "Meow Town",
         "date": "2019-01-03T21:54:00.000Z",
         "time": "2:00",
         "attendees": [{
             "id": "abc123",
-            "name": "Adam Jahr"
+            "name": "Carlotta Jahr"
           },
           {
             "id": "def456",
@@ -34,10 +34,10 @@
         "id": 8419988,
         "user": {
           "id": "abc123",
-          "name": "Adam"
+          "name": "Raegan"
         },
         "category": "animal welfare",
-        "organizer": "Adam",
+        "organizer": "Lizeth",
         "title": "Kitty Cluster",
         "description": "Yay cats!",
         "location": "Catlandia",
@@ -56,10 +56,10 @@
         "id": 4582797,
         "user": {
           "id": "abc123",
-          "name": "Adam"
+          "name": "Savannah"
         },
         "category": "animal welfare",
-        "organizer": "Adam",
+        "organizer": "Santiago",
         "title": "Puppy Parade",
         "description": "Yay pups!",
         "location": "Puptown ",
@@ -67,7 +67,215 @@
         "time": "1:00",
         "attendees": [{
             "id": "abc123",
-            "name": "Adam Jahr"
+            "name": "Remington Jahr"
+          },
+          {
+            "id": "ghi789",
+            "name": "Beth Swanson"
+          },
+          {
+            "id": "jkl101",
+            "name": "Mary Gordon"
+          }]
+      },
+      {
+        "id": 12345678,
+        "user": {
+          "id": "123abcfdgf",
+          "name": "Carol"
+        },
+        "category": "animal welfare",
+        "organizer": "Mikayla",
+        "title": "quia-sunt-sapiente",
+        "description": "Yay felines!",
+        "location": "Meow Town",
+        "date": "2019-01-03T21:54:00.000Z",
+        "time": "2:00",
+        "attendees": [{
+            "id": "123abcfdgf",
+            "name": "Hattie Jahr"
+          },
+          {
+            "id": "4643fgh",
+            "name": "Gregg Pollack"
+          },
+          {
+            "id": "ghirtgwrg489",
+            "name": "Beth Swanson"
+          },
+          {
+            "id": "jkledf24101",
+            "name": "Mary Gordon"
+          }]
+      },
+      {
+        "id": 2211335454,
+        "user": {
+          "id": "46546hgfd",
+          "name": "Celestino"
+        },
+        "category": "animal welfare",
+        "organizer": "Heber",
+        "title": "Kitty Cluster",
+        "description": "Yay cats!",
+        "location": "Catlandia",
+        "date": "2019-01-31T22:09:00.000Z",
+        "time": "7:00",
+        "attendees": [{
+            "id": "ghi789",
+            "name": "Beth Swanson"
+          },
+          {
+            "id": "jkl101",
+            "name": "Mary Gordon"
+          }]
+      },
+      {
+        "id": 676873224,
+        "user": {
+          "id": "ghnhg643",
+          "name": "Kolby"
+        },
+        "category": "animal welfare",
+        "organizer": "Tillman",
+        "title": "Puppy Parade",
+        "description": "Yay pups!",
+        "location": "Puptown ",
+        "date": "2019-02-02T23:27:00.000Z",
+        "time": "1:00",
+        "attendees": [{
+            "id": "abc123",
+            "name": "Hilma Jahr"
+          },
+          {
+            "id": "ghi789",
+            "name": "Beth Swanson"
+          },
+          {
+            "id": "jkl101",
+            "name": "Mary Gordon"
+          }]
+      },
+      {
+        "id": 976423465,
+        "user": {
+          "id": "45ghghg",
+          "name": "Vern"
+        },
+        "category": "animal welfare",
+        "organizer": "Lavada",
+        "title": "ducimus-ut-consectetur",
+        "description": "Yay felines!",
+        "location": "Meow Town",
+        "date": "2019-01-03T21:54:00.000Z",
+        "time": "2:00",
+        "attendees": [{
+            "id": "123abcfdgf",
+            "name": "Randy Jahr"
+          },
+          {
+            "id": "4643fgh",
+            "name": "Gregg Pollack"
+          },
+          {
+            "id": "ghirtgwrg489",
+            "name": "Beth Swanson"
+          },
+          {
+            "id": "jkledf24101",
+            "name": "Mary Gordon"
+          }]
+      },
+      {
+        "id": 867545611,
+        "user": {
+          "id": "gt55gtr4",
+          "name": "Hubert"
+        },
+        "category": "animal welfare",
+        "organizer": "Aglae",
+        "title": "Kitty Cluster",
+        "description": "Yay cats!",
+        "location": "Catlandia",
+        "date": "2019-01-31T22:09:00.000Z",
+        "time": "7:00",
+        "attendees": [{
+            "id": "ghi789",
+            "name": "Beth Swanson"
+          },
+          {
+            "id": "jkl101",
+            "name": "Mary Gordon"
+          }]
+      },
+      {
+        "id": 987654321,
+        "user": {
+          "id": "567yhyh",
+          "name": "Berry"
+        },
+        "category": "animal welfare",
+        "organizer": "Darian",
+        "title": "Puppy Parade",
+        "description": "Yay pups!",
+        "location": "Puptown ",
+        "date": "2019-02-02T23:27:00.000Z",
+        "time": "1:00",
+        "attendees": [{
+            "id": "abc123",
+            "name": "Deven Jahr"
+          },
+          {
+            "id": "ghi789",
+            "name": "Beth Swanson"
+          },
+          {
+            "id": "jkl101",
+            "name": "Mary Gordon"
+          }]
+      },
+      {
+        "id": 955011111,
+        "user": {
+          "id": "675644",
+          "name": "Jhon"
+        },
+        "category": "animal welfare",
+        "organizer": "Darian",
+        "title": "International Accounts Architect",
+        "description": "Yay pups!",
+        "location": "Puptown ",
+        "date": "2019-02-02T23:27:00.000Z",
+        "time": "1:00",
+        "attendees": [{
+            "id": "abc123",
+            "name": "Deven Jahr"
+          },
+          {
+            "id": "ghi789",
+            "name": "Beth Swanson"
+          },
+          {
+            "id": "jkl101",
+            "name": "Mary Gordon"
+          }]
+      },
+      {
+        "id": 6674338711,
+        "user": {
+          "id": "56ff33ff",
+          "name": "Manuel"
+        },
+        "category": "animal welfare",
+        "organizer": "Darian",
+        "title": "Product Implementation Strategist",
+        "description": "Yay pups!",
+        "location": "Puptown ",
+        "date": "2019-02-02T23:27:00.000Z",
+        "time": "1:00",
+        "attendees": [{
+            "id": "abc123",
+            "name": "Deven Jahr"
           },
           {
             "id": "ghi789",

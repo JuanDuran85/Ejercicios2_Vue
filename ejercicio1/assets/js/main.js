@@ -1,5 +1,36 @@
 let eventBus = new Vue();
 
+Vue.component('info-tabs', {
+    props: {
+        details: {
+            type: Array,
+            required: true
+        },
+        shipping: {
+            required: true
+        }
+    },
+    template: `
+        <div>
+            <span class="tab" :class="{activeTab: selectedTab === tab}" v-for="(tab, index) in tabs" :key="index" @click="selectedTab = tab">{{tab}}</span>
+            <div v-show="selectedTab === 'Shipping'">
+                <p>{{shipping}}</p>
+            </div>
+            <div v-show="selectedTab === 'Details'">
+                <ul>
+                    <li v-for="(item, index) in details" :key="index">{{item}}</li>
+                </ul>
+            </div>
+        </div>
+    `,
+    data() {
+        return {
+            tabs: ['Shipping', 'Details'],
+            selectedTab: 'Shipping',
+        }
+    },
+});
+
 Vue.component('product-tabs', {
     props: {
         reviews: {
@@ -104,7 +135,7 @@ Vue.component('product-review', {
     },
 });
 
-Vue.component('product-details', {
+/* Vue.component('product-details', {
     props: {
         details: {
             type: Array,
@@ -116,7 +147,7 @@ Vue.component('product-details', {
             <li v-for="(item, index) in details" :key="index">{{item}}</li>
         </ul>
     `,
-});
+}); */
 
 Vue.component('product', {
     props: {
@@ -136,9 +167,8 @@ Vue.component('product', {
                 <p v-else-if="inStock > 0 && inStock <= 10">Almost sold out!</p>
                 <p v-else :class="{outOfStock : !inStock}">Out of Stock</p>
                 <span>{{sale}}</span>
-                <p>Shipping: {{shipping}}</p>
 
-                <product-details :details="details"></product-details>
+                <info-tabs :details="details" :shipping="shipping"></info-tabs>
 
                 <ul>
                     <li v-for="(item, index) in sizes" :key="index">{{item}}</li>

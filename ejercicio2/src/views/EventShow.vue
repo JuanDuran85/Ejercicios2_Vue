@@ -1,15 +1,13 @@
 <template>
   <div>
-    
+    <h1>Showing event #1</h1>
   </div>
 </template>
 
 <script>
+
 export default {
-  name: 'HelloWorld',
+  name: 'EventShow',
+
 }
 </script>
-
-<style scoped>
-
-</style>

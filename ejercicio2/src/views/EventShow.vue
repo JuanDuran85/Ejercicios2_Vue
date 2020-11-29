@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Showing event #1</h1>
+    <h1>Showing event #{{id}}</h1>
   </div>
 </template>
 
@@ -8,6 +8,10 @@
 
 export default {
   name: 'EventShow',
-
+  props: ['id']
 }
 </script>
+
+<style lang="scss">
+  
+</style>

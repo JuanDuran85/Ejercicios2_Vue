@@ -1,0 +1,118 @@
+body {
+    height: 100vh;
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: Roboto, sans-serif;
+    background-color: #ccdcdc;
+    background-image: url("../img/coffee.jpg");
+    background-repeat: no-repeat;
+    background-position: 100% 100%
+}
+
+#app {
+    margin: 0 auto;
+}
+
+.contenido {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.plans {
+    padding: 0 40px;
+    margin-bottom: 40px
+}
+
+.plans .plan {
+    background-color: #fff;
+    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: .25rem;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    cursor: pointer;
+    position: relative;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease
+}
+
+.plans .plan, .plans .plan > .weight {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+}
+
+.plans .plan > .weight {
+    width: 20%;
+    font-size: 1.875rem;
+    font-weight: 200;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background-color: #7dacaf;
+    color: #136268;
+    border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+    height: 100px
+}
+
+.plans .plan > .description {
+    width: 60%;
+    padding: 1rem
+}
+
+.plans .plan>.description .description {
+    font-size: .875rem;
+    font-weight: 500;
+    color: #8795a1;
+    line-height: 1.5
+}
+
+.plans .plan>.price {
+    width: 20%;
+    color: #09848d;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-top: 1.5rem;
+    font-family: Crimson Text, serif;
+    font-weight: 600
+}
+
+.plans .plan>.price .dollar-sign {
+    font-size: 24px;
+    font-weight: 700
+}
+
+.plans .plan>.price .number {
+    font-size: 72px;
+    line-height: .5
+}
+
+.plans .active-plan,
+.plans .plan:hover {
+    -webkit-box-shadow: 0 15px 30px 0 rgba(0, 0, 0, .11), 0 5px 15px 0 rgba(0, 0, 0, .08);
+    box-shadow: 0 15px 30px 0 rgba(0, 0, 0, .11), 0 5px 15px 0 rgba(0, 0, 0, .08)
+}
+
+.plans .active-plan:after,
+.plans .plan:hover:after {
+    border-width: 2px;
+    border-color: #7dacaf;
+    border-radius: .25rem;
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0
+}

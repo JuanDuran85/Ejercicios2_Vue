@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="shortcut icon" href="./assets/img/logo.png" type="image/svg">
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <title>Ejemplo Componentes Basico</title>
+</head>
+<body>
+    <div id="app" class="container py-6">
+        <div class="py-5 contenido">
+            <h1 class="title has-text-centered">Coffe Plans</h1>
+            <h2 class="subtitle has-text-centered">We travel the world to source the very best single origin coffe for you</h2>
+            <plan-picker></plan-picker>
+        </div>
+    </div>
+    <script type="text/x-template" id="plan-picker-template">
+        <div class="plans">
+            <plan v-for="(plan,index) in plans" :key="index" :name="plan"></plan>
+        </div>
+    </script>
+    <script type="text/x-template" id="plan-template">
+        <div class="plan">
+            <div class="description">
+                <span class="title">
+                    {{name}}
+                </span>
+            </div>
+        </div>
+    </script>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>

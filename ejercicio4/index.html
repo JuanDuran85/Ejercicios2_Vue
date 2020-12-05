@@ -15,16 +15,16 @@
         <div class="py-5 contenido">
             <h1 class="title has-text-centered">Coffe Plans</h1>
             <h2 class="subtitle has-text-centered">We travel the world to source the very best single origin coffe for you</h2>
-            <plan-picker></plan-picker>
+            <plan-picker-component />
         </div>
     </div>
     <script type="text/x-template" id="plan-picker-template">
         <div class="plans">
-            <plan v-for="(plan,index) in plans" :key="index" :name="plan"></plan>
+            <plan-picker-item-component v-for="(plan,index) in plans" :key="index" :name="plan.name" @select="isSelectedPlan" :class="{'has-background-success': plan.selected}"></plan-picker-item-component>
         </div>
     </script>
-    <script type="text/x-template" id="plan-template">
-        <div class="plan">
+    <script type="text/x-template" id="plan-picker-item-template">
+        <div class="plan" @click="isSelected">
             <div class="description">
                 <span class="title">
                     {{name}}

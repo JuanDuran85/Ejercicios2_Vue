@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+// usar json-server para ejecutar el servidor de la API: json-server --watch db.json
+
 const apiClient = axios.create({
     baseURL: 'http://localhost:3000',
     withCredentials: false,

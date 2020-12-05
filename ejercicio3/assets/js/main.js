@@ -1,10 +1,8 @@
-Vue.component('', {
-    template: `
-    
-    `,
+Vue.component('click-counter', {
+    template: '#component-click-template',
     data() {
         return {
-            
+            count: 0,
         }
     },
 });
@@ -22,5 +20,5 @@ Vue.component('', {
  */
 
 const vm = new Vue({
-    el: '#app'
+    el: '#app',
 });

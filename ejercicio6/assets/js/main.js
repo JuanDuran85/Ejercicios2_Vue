@@ -32,9 +32,9 @@ const vm = new Vue({
                         console.error(error);
                         this.buscando = false;
                         this.error = true;
-                        this.name = "";
                     } else {
                         setTimeout(()=>{
+                            this.name = "";
                             this.user = data;
                             this.buscando = false;
                             this.ocultar = true;

@@ -11,24 +11,46 @@
 </head>
 <body>
     <div id="app" class="container py-6">
-       <h1 class="title">VueJS Slots</h1>
-       <todo-item>
-            Actividad 1
-            <template #description>
-                <div>
-                    <p>Descripción de la actividad 1</p>
+        <page-layout>
+            <template #header>
+                <div class="container">
+                    <h1 class="title">Section</h1>
+                    <h2 class="subtitle">
+                      A simple container to divide your page into <strong>sections</strong>, like the one you're currently reading
+                    </h2>
                 </div>
             </template>
-            <template #button-text>
-                Valor desde Template
+            <template #hero>
+                <div class="hero-body">
+                    <div class="container">
+                      <h1 class="title">
+                        Hero title
+                      </h1>
+                      <h2 class="subtitle">
+                        Hero subtitle
+                      </h2>
+                    </div>
+                </div>
             </template>
-       </todo-item>
-       <todo-item>
-            Actividad 2
-       </todo-item>
-       <todo-item>
-            Actividad 3
-       </todo-item>
+        </page-layout>
+        <h1 class="title">VueJS Slots</h1>
+        <todo-item>
+                Actividad 1
+                <template #description>
+                    <div>
+                        <p>Descripción de la actividad 1</p>
+                    </div>
+                </template>
+                <template #button-text>
+                    Valor desde Template
+                </template>
+        </todo-item>
+        <todo-item>
+                Actividad 2
+        </todo-item>
+        <todo-item>
+                Actividad 3
+        </todo-item>
     </div>
     
     <script type="text/x-template" id="todo-item-component">
@@ -43,6 +65,15 @@
         <button>
             <slot name="button-text">Valor por defecto</slot>
         </button>
+      </div>
+    </script>
+
+    <script type="text/x-template" id="page-layout-component">
+      <div>
+        <section>
+            <slot name="header" class="section"></slot>
+            <slot name="hero" class="hero"></slot>
+        </section>
       </div>
     </script>
     <script src="./assets/js/main.js"></script>

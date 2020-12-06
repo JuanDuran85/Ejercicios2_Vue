@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <title>GitHub Card</title>
+</head>
+<body>
+    <div id="app" class="ui container">
+      <h1>GitHub Profiles</h1>
+      <div class="ui icon input">
+        <div class="centrado">
+          <span>Ingresa el Nombre</span>
+        </div>
+        <input type="text" placeholder="Buscar..." v-model="name" @keyup.enter="search">
+        <button class="ui black button" @click="search"><i class="search icon"></i> Buscar</button>
+      </div>
+      <!-- Buscando... -->
+      <div class="ui icon message" v-show="buscando">
+        <i class="notched circle loading icon"></i>
+        <div class="content">
+          <div class="header">
+            Just one second
+          </div>
+          <p>We're fetching that content for you.</p>
+        </div>
+      </div>
+      <!-- error en busqueda -->
+      <div class="ui error message" v-show="error">
+        <i class="close icon"></i>
+        <div class="header">
+          There were some errors with your submission
+        </div>
+        <ul class="list">
+          <li>You must include both a upper and lower case letters in your password.</li>
+          <li>You need to select your home country.</li>
+        </ul>
+      </div>
+      <github-user-card :user="user" v-show="ocultar"></github-user-card>
+    </div>
+    
+    <script type="text/x-template" id="github-user-card-component">
+      <div class="tarjeta">
+        <div class="ui centered card">
+          <div class="image">
+            <img :src="user.avatar_url" :alt="user.id">
+          </div>
+          <div class="content">
+            <a class="header">{{user.name}}</a>
+            <div class="meta">
+              <span class="date">Joined in {{user.created_at}}</span>
+            </div>
+            <div class="description">
+              {{user.name}} is a {{user.type}} in GitHub from {{user.location}}
+            </div>
+          </div>
+          <div class="extra content">
+            <a>
+              <i class="user icon"></i>
+              {{user.followers}} Followers
+            </a>
+          </div>
+        </div>
+      </div>
+    </script>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>

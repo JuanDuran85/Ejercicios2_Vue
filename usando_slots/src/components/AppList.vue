@@ -7,6 +7,7 @@
                 </el-avatar>
                 <div class="nombre__user">
                     <span>{{item.name.first}} {{item.name.last}}</span>
+                    <slot> - {{otra(item)}}</slot>
                 </div>
             </li>
         </ul>
@@ -17,6 +18,12 @@
 <script>
 export default {
     name: 'AppList',
+    props: {
+        otra: {
+            type: Function,
+            default: () => {}
+        }
+    },
     data() {
         return {
             user: [],

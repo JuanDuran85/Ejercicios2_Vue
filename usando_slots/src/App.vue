@@ -6,7 +6,7 @@
         <AppIcon class="iconCenter"/>
         texto boton
       </AppButton>
-    <AppList>
+    <AppList :otra="(user) => user.cell">
       <template #loading>          
         <div v-loading="true"></div>
       </template>

@@ -11,6 +11,11 @@ const routes = [
     component: Home
   },
   {
+    path: '/details/:id',
+    name: 'DestinationDetails',
+    component: () => import(/* webpackChunkName: "DestinationDetails" */ '../views/DestinationDetails.vue')
+  },
+  {
     path: '/brazil',
     name: 'Brazil',
     component: () => import(/* webpackChunkName: "Brazil" */ '../views/Brazil.vue')
@@ -33,6 +38,7 @@ const routes = [
 ]
 
 const router = new VueRouter({
+  linkExactActiveClass: "travel-active-class",
   mode: 'history',
   base: process.env.BASE_URL,
   routes

@@ -1,10 +1,11 @@
 <template>
   <div class="container">
+    <h2 class="title is-1 my-6">All the destinations</h2>
     <div class="columns">
       <div v-for="(item,index) in destinations" :key="index" class="column">
-        <router-link :to="{name: item.name}"><h2>{{item.name}}</h2></router-link>
+        <router-link :to="{name: 'DestinationDetails', params: {id: item.id}}"><h2>{{item.name}}</h2></router-link>
         <figure>
-          <router-link :to="{name: item.name}">
+          <router-link :to="{name: 'DestinationDetails', params: {id: item.id}}">
             <img :src="require(`@/assets/${item.image}`)" :alt="item.id">
           </router-link>
         </figure>
@@ -22,7 +23,5 @@ export default {
       destinations: db.destinations,
     }
   },
-  components: {
-  }
 }
 </script>

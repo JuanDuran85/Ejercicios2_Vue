@@ -2,11 +2,7 @@
     <b-navbar>
         <template slot="brand">
             <b-navbar-item tag="router-link" :to="{ path: '/' }">
-                <b-icon
-                    pack="fas"
-                    icon="plane-departure"
-                    size="is-medium">
-                </b-icon> 
+                <b-icon pack="fas" icon="plane-departure" size="is-medium"></b-icon> 
             </b-navbar-item>
         </template>
         <template slot="start">
@@ -46,5 +42,7 @@ export default {
 </script>
 
 <style scoped>
-
+#nav a.travel-active-class {
+  color: #42b983;
+}
 </style>

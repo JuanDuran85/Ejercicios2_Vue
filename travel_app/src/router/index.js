@@ -11,29 +11,18 @@ const routes = [
     component: Home
   },
   {
-    path: '/details/:id',
+    path: '/details/:slug',
     name: 'DestinationDetails',
-    component: () => import(/* webpackChunkName: "DestinationDetails" */ '../views/DestinationDetails.vue')
-  },
-  {
-    path: '/brazil',
-    name: 'Brazil',
-    component: () => import(/* webpackChunkName: "Brazil" */ '../views/Brazil.vue')
-  },
-  {
-    path: '/hawaii',
-    name: 'Hawaii',
-    component: () => import(/* webpackChunkName: "Hawaii" */ '../views/Hawaii.vue')
-  },
-  {
-    path: '/panama',
-    name: 'Panama',
-    component: () => import(/* webpackChunkName: "Panama" */ '../views/Panama.vue')
-  },
-  {
-    path: '/jamaica',
-    name: 'Jamaica',
-    component: () => import(/* webpackChunkName: "Jamaica" */ '../views/Jamaica.vue')
+    component: () => import(/* webpackChunkName: "DestinationDetails" */ '../views/DestinationDetails.vue'),
+    props: true,
+    children: [
+      {
+        path: ':',
+        name: 'ExperiencesDetails',
+        props: true,
+        component: () => import(/* webpackChunkName: "ExperienceSlug" */ '../views/ExperiencesDetails.vue')
+      }
+    ]
   },
 ]
 

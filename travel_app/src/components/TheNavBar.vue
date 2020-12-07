@@ -9,14 +9,8 @@
             <b-navbar-item href="#">
                 <router-link to="/">Home</router-link>
             </b-navbar-item>
-            <b-navbar-item href="#">
-                <router-link to="/brazil">Brazil</router-link>
-            </b-navbar-item>
-            <b-navbar-item href="#">
-                <router-link to="/panama">Panama</router-link>
-            </b-navbar-item>
-            <b-navbar-item href="#">
-                <router-link to="/jamaica">Jamaica</router-link> 
+            <b-navbar-item v-for="(item, index) in destinations" :key="index">
+                <router-link :to="{name: 'DestinationDetails', params: {slug: item.slug}}">{{item.name}}</router-link>
             </b-navbar-item>
         </template>
 
@@ -36,8 +30,15 @@
 </template>
 
 <script>
+import db from '@/db/db';
+
 export default {
-  name: 'HelloWorld',
+  name: 'TheNavBar',
+  computed: {
+      destinations(){
+          return db.destinations;
+      }
+  }
 }
 </script>
 

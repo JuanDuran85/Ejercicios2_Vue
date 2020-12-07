@@ -11,6 +11,13 @@
         <div v-loading="true"></div>
       </template>
     </AppList>
+    <hr>
+    <AppCard>
+      <template #cards="{datos}">
+        <p class="time">{{datos.email}}</p>
+        <el-button type="text" class="button">Usuario {{datos.id}}</el-button>
+      </template>
+    </AppCard>
     </template>
   </AppLayout>
 </template>
@@ -20,6 +27,7 @@ import AppLayout from '@/components/AppLayout.vue';
 import AppButton from '@/components/AppButton.vue';
 import AppIcon from '@/components/AppIcon.vue';
 import AppList from '@/components/AppList.vue';
+import AppCard from '@/components/AppCard.vue';
 
 export default {
   name: 'app',
@@ -28,6 +36,7 @@ export default {
     AppIcon,
     AppLayout,
     AppList,
+    AppCard,
   },
   methods: {
     log(){

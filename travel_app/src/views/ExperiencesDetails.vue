@@ -1,13 +1,13 @@
 <template>
     <div>
-        <h3 class="title">Experiences</h3>
-        <h2>{{experience.name}}</h2>
+        <h3 class="title mt-6">Experiences</h3>
+        <h2 class="title is-size-4">{{experience.name}}</h2>
         <div class="is-flex is-flex-direction-row is-flex-wrap-wrap is-justify-content-space-around is-align-content-stretch is-align-items-stretch">
             <div>
                 <img :src="require(`@/assets/${experience.image}`)" :alt="experience.name">
             </div>
             <div>
-                <p>{{experience.description}}</p>
+                <p class="has-text-justified m-5">{{experience.description}}</p>
             </div>
         </div>
     </div>
@@ -30,10 +30,10 @@ export default {
     },
     computed: {
         destination(){
-            return db.destination.find(result => result.slug === this.slug)
+            return db.destinations.find(result => result.slug === this.slug)
         },
         experience(){
-            return this.destination.find(result => result.slug == this.experienceSlug)
+            return this.destination.experiences.find(result => result.slug == this.experienceSlug)
         }
     }
 }

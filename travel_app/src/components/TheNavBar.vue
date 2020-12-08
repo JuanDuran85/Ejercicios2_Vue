@@ -6,23 +6,26 @@
             </b-navbar-item>
         </template>
         <template slot="start">
-            <b-navbar-item href="#">
+            <b-navbar-item>
                 <router-link to="/">Home</router-link>
             </b-navbar-item>
             <b-navbar-item v-for="(item, index) in destinations" :key="index">
                 <router-link :to="{name: 'DestinationDetails', params: {slug: item.slug}}">{{item.name}}</router-link>
+            </b-navbar-item>
+            <b-navbar-item>
+                <router-link :to="{name: 'AdminUser'}">Admin</router-link>
             </b-navbar-item>
         </template>
 
         <template slot="end">
             <b-navbar-item tag="div">
                 <div class="buttons">
-                    <a class="button is-primary">
-                        <strong>Sign up</strong>
+                    <a class="button is-primary" @click="singOut">
+                        <strong>Sign Out</strong>
                     </a>
-                    <a class="button is-light">
+                    <router-link :to="{name: 'Login'}" class="button is-light">
                         Log in
-                    </a>
+                    </router-link>
                 </div>
             </b-navbar-item>
         </template>
@@ -38,7 +41,19 @@ export default {
       destinations(){
           return db.destinations;
       }
-  }
+  },
+  methods: {
+      singOut(){
+          if (this.$route.path == "/login") {
+              console.log("ya estas en login");
+          } else {
+              this.$buefy.dialog.alert('Everything looks fine!');
+              db.userName = null;
+              db.password = null;
+              this.$router.replace({name: 'Login'});
+          }
+      }
+  },
 }
 </script>
 

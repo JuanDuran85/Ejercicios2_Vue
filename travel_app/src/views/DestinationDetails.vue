@@ -31,9 +31,9 @@
         <div>
             <h2 class="title my-6">Top experiences in {{destinationTravel.name}}</h2>
         </div>
-        <div class="is-flex is-flex-direction-row is-flex-wrap-wrap is-justify-content-space-around is-align-content-stretch is-align-items-stretch">
+        <div class="is-flex is-flex-direction-row is-flex-wrap-wrap is-justify-content-space-around is-align-content-stretch is-align-items-stretch" id="experience">
             <div v-for="(item, index) in destinationTravel.experiences" :key="index">
-                <router-link :to="{name: 'ExperiencesDetails', params: {experienceSlug : item.slug}}">
+                <router-link :to="{name: 'ExperiencesDetails', params: {experienceSlug : item.slug}, hash: '#experience'}">
                     <img :src="require(`@/assets/${item.image}`)" :alt="item.name">
                     <span class="textoImg">{{item.name}}</span>
                 </router-link>

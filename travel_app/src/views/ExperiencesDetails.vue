@@ -1,7 +1,6 @@
 <template>
     <div>
-        <h3 class="title mt-6">Experiences</h3>
-        <h2 class="title is-size-4">{{experience.name}}</h2>
+        <h2 class="title  mt-6 is-size-4">{{experience.name}}</h2>
         <div class="is-flex is-flex-direction-row is-flex-wrap-wrap is-justify-content-space-around is-align-content-stretch is-align-items-stretch">
             <div>
                 <img :src="require(`@/assets/${experience.image}`)" :alt="experience.name">

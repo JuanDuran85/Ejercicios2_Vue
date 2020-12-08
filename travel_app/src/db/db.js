@@ -1,4 +1,6 @@
 export default {
+  userName: null,
+  password: null,
   destinations: [
     {
       name: "Brazil",

@@ -1,7 +1,13 @@
 <template>
     <div class="demo-type">
-        <ul v-if="loading">
-            <li v-for="(item, index) in user" :key="index">
+        <el-container>
+            <div class="contenedor">
+                <el-slider v-model="value1"></el-slider>
+                  <el-input placeholder="Type something" prefix-icon="el-icon-search" v-model="buscar"></el-input>
+            </div>
+        </el-container>
+        <ul v-if="loading" class="margenes">
+            <li v-for="(item, index) in filtrando" :key="index">
                 <el-avatar :size="60" :src="item.picture.medium">
                     <img :src="item.picture.medium" :alt="item.id.value">
                 </el-avatar>
@@ -27,7 +33,14 @@ export default {
     data() {
         return {
             user: [],
-            loading: false
+            loading: false,
+            value1: 0,
+            buscar: ''
+        }
+    },
+    computed: {
+        filtrando(){
+            return this.user.filter(result => result.registered.age > this.value1 && result.name.first.toLowerCase().includes(this.buscar.toLowerCase()))
         }
     },
     mounted() {
@@ -55,11 +68,18 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
     ul {
         list-style-type: none;
     }
     .nombre__user{
         display: inline-block;
+    }
+    .contenedor{
+        width: 50%;
+        margin: 0 auto;
+    }
+    .margenes{
+        margin: 50px 0;
     }
 </style>

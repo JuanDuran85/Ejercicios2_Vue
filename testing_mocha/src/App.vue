@@ -3,7 +3,8 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link :to="{name: 'Recordatorios'}">Recordatorios</router-link> |
-      <router-link :to="{name: 'Cupones'}">Cupones</router-link>
+      <router-link :to="{name: 'Cupones'}">Cupones</router-link> |
+      <router-link :to="{name: 'Preguntas'}">Preguntas</router-link>
     </div>
     <router-view/>
   </div>

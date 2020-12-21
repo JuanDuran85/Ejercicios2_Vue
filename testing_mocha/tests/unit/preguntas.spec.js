@@ -2,12 +2,14 @@ import { expect } from 'chai';
 import { mount } from '@vue/test-utils';
 import Vue from 'vue';
 import Preguntas from '@/views/Preguntas.vue';
+import moxios from 'moxios';
 
 describe('Preguntas', ()=>{
 
     let wrapper;
 
     beforeEach(() => {
+        moxios.install();
         wrapper = mount(Preguntas, {
             propsData: {
                 pregunta: {
@@ -16,6 +18,10 @@ describe('Preguntas', ()=>{
                 }
             }
         });
+    });
+
+    afterEach(() => {
+        moxios.uninstall();
     });
 
     it('tiene un titulo en el body', () => {
@@ -47,8 +53,21 @@ describe('Preguntas', ()=>{
         botonesClick('button#guardando');
         await Vue.nextTick();
 
+        moxios.stubRequest('/pregunta/1', {
+            status: 200,
+            response: {
+                title: 'Cambiando el titulo de la pregunta',
+                body: 'Cambiando el cuerpo de la pregunta'
+            }
+        })
+        await wrapper.vm.$nextTick();
+        await wrapper.vm.$nextTick();
+
         buscando('Cambiando el titulo de la pregunta');
         buscando('Cambiando el cuerpo de la pregunta');
+
+        /* buscando('Pregunta actualizada en la Base de Datos'); */
+        expect(wrapper.find('p#actualizadaPregunta').isVisible);
     });
 
     it('se puede cancelar el modo de edicion', async () => {

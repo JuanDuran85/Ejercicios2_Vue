@@ -11,10 +11,13 @@
             <button id="cancelar" @click="cancelando">Cancelar</button>
             <button id="guardando" @click="actualizar">Guardando</button>
         </div>
+        <p v-if="actualizadaPre" id="actualizadaPregunta">Pregunta actualizada en la Base de Datos</p>
     </div>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
     name: 'Preguntas',
     props: {
@@ -33,7 +36,8 @@ export default {
             formulario: {
                 title: this.pregunta.title,
                 body: this.pregunta.body
-            }
+            },
+            actualizadaPre: false,
         }
     },
     methods: {
@@ -43,6 +47,14 @@ export default {
         actualizar(){
             this.preguntasTotal.title = this.formulario.title;
             this.preguntasTotal.body = this.formulario.body;
+
+            axios.post('/pregunta/1', this.formulario)
+                .then(({data}) => {
+                    console.log(data.title);
+                    this.actualizadaPre = true;
+                })
+                .catch(error => console.log(error));
+
             this.editar = false;
         }
     },

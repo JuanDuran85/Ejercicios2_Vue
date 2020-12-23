@@ -100,14 +100,4 @@ describe('Cuenta Regresiva',()=>{
         let miniWrap = selector ? wrapper.find(selector) : wrapper;
         expect(miniWrap.html()).to.contains(texto);
     }
-
-/*     let tipo = (selector, texto) => {
-        let nodo = wrapper.find(selector);
-        nodo.element.value = texto;
-        nodo.trigger('input');
-    }
-
-    let botonesClick = (selector) => {
-        wrapper.find(selector).trigger('click')
-    } */
 });

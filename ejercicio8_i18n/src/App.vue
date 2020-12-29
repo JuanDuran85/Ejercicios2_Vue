@@ -11,7 +11,16 @@ export default {
   name: 'App',
   components: {
     HelloI18n
-  }
+  },
+  created() {
+    let locale = localStorage.getItem('local');
+
+    if(locale){
+      this.$i18n.locale = locale;
+    } else if (navigator.language) {
+      this.$i18n.locale = navigator.language.substring(0,2);
+    }
+  },
 }
 </script>
 

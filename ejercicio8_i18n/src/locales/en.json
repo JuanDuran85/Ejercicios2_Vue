@@ -1,3 +1,7 @@
 {
-    "message": "Message from i18n in JSON File"
+    "message": "Message from i18n in JSON File for {name}",
+    "email": "Our email is: {email}",
+    "file": "file | files",
+    "person": "no people | one person | {count} people",
+    "apple": "no apples | 1 apple | {n} apples"
 }

@@ -1,0 +1,7 @@
+{
+    "message": "Mensaje desde i18n en el archivo JSON para {name}",
+    "email": "Nuestro correo electrónico es: {email}",
+    "file": "archivo | archivos",
+    "person": "Nadie | Una persona | {n} personas",
+    "apple": "cero manzanas | 1 manzana | {n} manzanas"
+}

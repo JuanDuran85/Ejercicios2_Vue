@@ -26,6 +26,24 @@ const dateTimeFormats = {
   ca: setDateTimeFormats
 };
 
+const numberFormats = {
+  'en-US': {
+    currency: {
+      style: 'currency', currency: 'USD', currencyDisplay: 'symbol'
+    }
+  },
+  'es-ES': {
+    currency: {
+      style: 'currency', currency: 'EUR', currencyDisplay: 'code'
+    }
+  },
+  'ca': {
+    currency: {
+      style: 'currency', currency: 'EUR', currencyDisplay: 'name'
+    }
+  },
+}
+
 function loadLocaleMessages () {
   const locales = require.context('./locales', true, /[A-Za-z0-9-_,\s]+\.json$/i)
   const messages = {}
@@ -44,5 +62,6 @@ export default new VueI18n({
   fallbackLocale: process.env.VUE_APP_I18N_FALLBACK_LOCALE || 'en',
   messages: loadLocaleMessages(),
   silentTranslationWarn: true,
-  dateTimeFormats
+  dateTimeFormats,
+  numberFormats
 })

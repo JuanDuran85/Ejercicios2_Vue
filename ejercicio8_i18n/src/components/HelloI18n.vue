@@ -19,15 +19,68 @@
     <p>{{ $d(new Date(), "short", "en-GB") }}</p>
     <p>{{ $d(new Date(), "long") }}</p>
     <p>{{ $d(new Date(), "long", "en-GB") }}</p>
+
+    <hr>
+
+    <h2>Formato de monedas</h2>
+    <p>{{ $n(100, 'currency') }}</p>
+    <br>
+    <div>
+      <i18n-n :value="2000.4677" format="currency">
+        <template v-slot:currency="slotProps">
+          <span>{{slotProps.currency}}</span>
+        </template>
+        <template v-slot:integer="slotProps">
+          <span>{{slotProps.integer}}</span>
+        </template>
+        <template v-slot:decimal="slotProps">
+          <span>{{slotProps.decimal}}</span>
+        </template>
+        <template v-slot:fraction="slotProps">
+          <span>{{slotProps.fraction}}</span>
+        </template>
+      </i18n-n>
+    </div>
+
     <div>
       <button @click="setLocal('en')">English</button>
       <button @click="setLocal('es')">Castellano</button>
       <button @click="setLocal('ca')">Català</button>
     </div>
+
+    <hr>
+
+    <h2>Productos</h2>
+    <p>{{ producto.name }}: {{ $n(producto.price, 'currency')}}</p>
+    <p>Stock: {{producto.stock}}</p>
+
+    <div>
+      <button @click="setLocal('en-US')">EUA</button>
+      <button @click="setLocal('es-ES')">España</button>
+      <button @click="setLocal('ca')">Cataluña</button>
+    </div>
   </div>
 </template>
 
 <script>
+const productos = {
+  'en-US': {
+    name: 'Red Jeans',
+    stock: 4,
+    price: 50,
+  },
+  'es-ES': {
+    name: 'Vaqueros Rojos',
+    stock: 5,
+    price: 45,
+  },
+  'ca': {
+    name: 'texans Vermells',
+    stock: 1,
+    price: 45,
+  }, 
+};
+
 export default {
   name: 'HelloI18n',
   data() {
@@ -42,5 +95,10 @@ export default {
       localStorage.setItem('local',idioma);
     }
   },
+  computed: {
+    producto(){
+      return productos[this.$i18n.locale];
+    }
+  }
 }
 </script>

@@ -3,5 +3,7 @@
     "email": "El nostre correu electrònic és: {email}",
     "file": "dossier | Fitxers",
     "person": "cap gent | un sol poble | {count} gent",
-    "apple": "sense poma | 1 poma | {n} pomes"
+    "apple": "sense poma | 1 poma | {n} pomes",
+    "terms": "Accepto els {termsURL} dels contractes del servei",
+    "termsLink": "termes i condicions"
 }

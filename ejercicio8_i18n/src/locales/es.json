@@ -3,5 +3,7 @@
     "email": "Nuestro correo electrónico es: {email}",
     "file": "archivo | archivos",
     "person": "Nadie | Una persona | {n} personas",
-    "apple": "cero manzanas | 1 manzana | {n} manzanas"
+    "apple": "cero manzanas | 1 manzana | {n} manzanas",
+    "terms": "Yo acepto los {termsURL} del contrato de servicio",
+    "termsLink": "terminos y condiciones"
 }

@@ -50,13 +50,19 @@
 
     <hr>
 
+    <i18n path="terms" tag="p">
+      <template v-slot:termsURL>
+        <a href="/terms">{{ $t("termsLink")}}</a>
+      </template>
+    </i18n>
+
     <h2>Productos</h2>
     <p>{{ producto.name }}: {{ $n(producto.price, 'currency')}}</p>
     <p>Stock: {{producto.stock}}</p>
 
     <div>
-      <button @click="setLocal('en-US')">EUA</button>
-      <button @click="setLocal('es-ES')">España</button>
+      <button @click="setLocal('en')">EUA</button>
+      <button @click="setLocal('es')">España</button>
       <button @click="setLocal('ca')">Cataluña</button>
     </div>
   </div>
@@ -64,12 +70,12 @@
 
 <script>
 const productos = {
-  'en-US': {
+  'en': {
     name: 'Red Jeans',
     stock: 4,
     price: 50,
   },
-  'es-ES': {
+  'es': {
     name: 'Vaqueros Rojos',
     stock: 5,
     price: 45,

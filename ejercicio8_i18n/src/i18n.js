@@ -27,12 +27,12 @@ const dateTimeFormats = {
 };
 
 const numberFormats = {
-  'en-US': {
+  'en': {
     currency: {
       style: 'currency', currency: 'USD', currencyDisplay: 'symbol'
     }
   },
-  'es-ES': {
+  'es': {
     currency: {
       style: 'currency', currency: 'EUR', currencyDisplay: 'code'
     }

@@ -27,7 +27,8 @@
     "node-sass": "^5.0.0",
     "sass": "^1.29.0",
     "sass-loader": "^10.1.0",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "vuejs-datepicker": "^1.6.2"
   },
   "eslintConfig": {
     "root": true,

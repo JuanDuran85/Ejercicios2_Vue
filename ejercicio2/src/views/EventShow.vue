@@ -1,20 +1,20 @@
 <template>
   <div>
     <div class="event-header">
-      <span class="eyebrow">@{{ event.time }} on {{ event.date }}</span>
-      <h1 class="title">{{ event.title }}</h1>
-      <h5>Organized by {{ event.organizer }}</h5>
-      <h5>Category: {{ event.category }}</h5>
+      <span class="eyebrow">@{{ enviandoEventoId.time }} on {{ enviandoEventoId.date }}</span>
+      <h1 class="title">{{ enviandoEventoId.title }}</h1>
+      <h5>Organized by {{ enviandoEventoId.organizer }}</h5>
+      <h5>Category: {{ enviandoEventoId.category }}</h5>
     </div>
     <BaseIcon name="map"><h2>Location</h2></BaseIcon>
-    <address>{{ event.location }}</address>
+    <address>{{ enviandoEventoId.location }}</address>
     <h2>Event details</h2>
-    <p>{{ event.description }}</p>
+    <p>{{ enviandoEventoId.description }}</p>
     <h2>Attendees
-      <span class="badge -fill-gradient">{{ event.attendees ? event.attendees.length : 0 }}</span>
+      <span class="badge -fill-gradient">{{ enviandoEventoId.attendees ? enviandoEventoId.attendees.length : 0 }}</span>
     </h2>
     <ul class="list-group">
-      <li v-for="(attendee, index) in event.attendees" :key="index" class="list-item">
+      <li v-for="(attendee, index) in enviandoEventoId.attendees" :key="index" class="list-item">
         <b>{{ attendee.name }}</b>
       </li>
     </ul>
@@ -22,24 +22,16 @@
 </template>
 
 <script>
-import EventService from '@/services/EventServices.js';
-
+import { mapGetters } from "vuex";
 export default {
   name: 'EventShow',
   props: ['id'],
-  data() {
-    return {
-      event: {}
-    }
-  },
   created() {
-    EventService.getEvent(this.id)
-    .then(resp => {
-      console.log(resp.data);
-      this.event = resp.data;
-    })
-    .catch(error => console.error(error));
+   this.$store.dispatch('fetchApiEventoId',this.id);
   },
+  computed: {
+    ...mapGetters(['enviandoEventoId'])
+  }
 }
 </script>
 

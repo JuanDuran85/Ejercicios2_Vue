@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Event Listing</h1>
-    <event-card v-for="(item,index) in events" :key="index" :event="item"></event-card>
+    <event-card v-for="(item,index) in enviandoEvents" :key="index" :event="item"></event-card>
     <BaseIcon/>
     <div class="pagination">
       <router-link id="page-prev" :to="{name: 'EventList', query: {page: page - 1}}" rel="prev" v-if="page != 1">
@@ -16,31 +16,21 @@
 
 <script>
 import EventCard from '@/components/EventCard.vue';
-import EventService from '@/services/EventServices.js';
+import { mapGetters } from "vuex";
 
 export default {
   name: 'EventList',
   props: ['page'],
-  data() {
-    return {
-      events: [],
-      totalEvents: 0,
-    }
-  },
   components: {
     EventCard
   },
   created() {
-    EventService.getEvents(2, this.page)
-      .then(resp => {
-        this.events = resp.data;
-        this.totalEvents = resp.headers['x-total-count'];
-      })
-      .catch(error => console.error(error));
+    this.$store.dispatch('fetchApi',this.page);
   },
   computed: {
+    ...mapGetters(['enviandoEvents','enviandoTotalEvents']),
     hasNextpage(){
-      let totalPages = Math.ceil(this.totalEvents / 2);
+      let totalPages = Math.ceil(this.enviandoTotalEvents / 2);
       return this.page < totalPages;
     }
   },

@@ -27,10 +27,10 @@ export default {
   name: 'EventShow',
   props: ['id'],
   created() {
-   this.$store.dispatch('fetchApiEventoId',this.id);
+   this.$store.dispatch('eventModule/fetchApiEventoId',this.id);
   },
   computed: {
-    ...mapGetters(['enviandoEventoId'])
+    ...mapGetters({'enviandoEventoId': 'eventModule/enviandoEventoId'})
   }
 }
 </script>

@@ -65,7 +65,7 @@ export default {
     methods: {
         creandoEvento(){
             this.event.user = this.enviandoUser;
-            this.$store.dispatch('createEvent',this.event).then(()=>{
+            this.$store.dispatch('eventModule/createEvent',this.event).then(()=>{
               this.$router.push({name: 'EventShow', params: {id : this.event.id}});
               this.event = this.createFreshEventObject();
             }).catch(error => console.error(`Hubo un error: ${error}`));

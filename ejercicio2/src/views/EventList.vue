@@ -16,7 +16,7 @@
 
 <script>
 import EventCard from '@/components/EventCard.vue';
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   name: 'EventList',
@@ -25,15 +25,21 @@ export default {
     EventCard
   },
   created() {
-    this.$store.dispatch('fetchApi',this.page);
+    this.fetchApi(this.page);
   },
   computed: {
-    ...mapGetters(['enviandoEvents','enviandoTotalEvents']),
+    ...mapGetters({
+      'enviandoEvents': 'eventModule/enviandoEvents',
+      'enviandoTotalEvents' : 'eventModule/enviandoTotalEvents'
+    }),
     hasNextpage(){
       let totalPages = Math.ceil(this.enviandoTotalEvents / 2);
       return this.page < totalPages;
     }
   },
+  methods: {
+    ...mapActions('eventModule',['fetchApi'])
+  }
 }
 </script>
 

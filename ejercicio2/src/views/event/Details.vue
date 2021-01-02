@@ -24,7 +24,7 @@
 <script>
 import { mapGetters } from "vuex";
 export default {
-  name: 'EventShow',
+  name: 'Details',
   props: ['id'],
   created() {
    this.$store.dispatch('eventModule/fetchApiEventoId',this.id);

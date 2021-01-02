@@ -1,8 +1,8 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import EventList from '../views/EventList.vue'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import EventList from '../views/EventList.vue';
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
@@ -13,8 +13,8 @@ const routes = [
   },
   {
     path: '/event/:id',
-    name: 'EventShow',
-    component: () => import(/* webpackChunkName: "EventShow" */ '../views/EventShow.vue'),
+    name: 'Details',
+    component: () => import(/* webpackChunkName: "EventShow" */ '../views/event/Details.vue'),
     props: true
   },
   {

@@ -1,17 +1,20 @@
 <template>
   <div id="app">
     <nav-bar></nav-bar>
+    <notification-container></notification-container>
     <router-view :key="$route.fullPath" />
   </div>
 </template>
 
 <script>
 import NavBar from '@/components/NavBar.vue';
+import NotificationContainer from '@/components/NotificationContainer.vue';
 
 export default {
   name: 'App',
   components: {
-    NavBar
+    NavBar,
+    NotificationContainer
   }
 }
 </script>
@@ -92,7 +95,7 @@ export default {
   .eyebrow {
     font-size: 20px;
   }
-  .-text-primary {
+  .-text-primary, .-text-success {
     color: #39b982;
   }
   .-text-base {

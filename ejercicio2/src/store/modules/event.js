@@ -34,26 +34,51 @@ export default {
         }
     },
     actions: {
-        createEvent({commit},event){
+        createEvent({commit, dispatch},event){
             return EventServices.postEvent(event).then(()=>{
-              commit('mutandoEvento',event);
+                commit('mutandoEvento',event);
+                const notification = {
+                    type: 'success',
+                    message: `The event was added`
+                };
+                dispatch('notificationsModule/addNotifications', notification, {root: true});
+            }).catch(error =>{
+                console.error(error);
+                const notification = {
+                    type: 'error',
+                    message: `There was problem creating an Event: ${error.message}`
+                };
+                dispatch('notificationsModule/addNotifications', notification, {root: true});
+                throw error;
             })
         },
-        fetchApi({commit}, page){
+        fetchApi({commit, dispatch}, page){
             EventServices.getEvents(2, page).then(resp => {
                 commit('mutandoEventos', resp);
-            }).catch(error => console.error(error));
+            }).catch(error => {
+                console.error(error);
+                const notification = {
+                    type: 'error',
+                    message: `There was problem fetching events: ${error.message}`
+                };
+                dispatch('notificationsModule/addNotifications', notification, {root: true});
+            });
         },
-        fetchApiEventoId({commit,getters}, id){
+        fetchApiEventoId({commit,getters,dispatch}, id){
             let evento = getters.getEventById(id);
             if (evento) {
                 commit('mutandoEventoIndividual',evento);
             } else {
-                EventServices.getEvent(id)
-                .then(resp => {
-                commit('mutandoEventoIndividual',resp.data);
-                })
-                .catch(error => console.error(error));
+                EventServices.getEvent(id).then(resp => {
+                    commit('mutandoEventoIndividual',resp.data);
+                }).catch(error => {
+                    console.error(error);
+                    const notification = {
+                        type: 'error',
+                        message: `There was problem fetching event: ${error.message}`
+                    };
+                    dispatch('notificationsModule/addNotifications', notification, {root: true});
+                });
             }
         }
     }

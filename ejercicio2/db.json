@@ -309,96 +309,12 @@
       ]
     },
     {
-      "id": 42498,
-      "title": "Evento para la naturaleza",
-      "date": "2021-01-01T21:31:00.000Z",
+      "id": 22999,
+      "title": "evento 1 de animales",
+      "date": "2021-01-07T03:32:00.000Z",
       "location": "Chile",
-      "description": "Naturaleza de eventos",
-      "category": "nature",
-      "organizer": "Manuel",
-      "attendees": [
-        {
-          "id": "abc123",
-          "name": "Deven Jahr"
-        },
-        {
-          "id": "ghi789",
-          "name": "Beth Swanson"
-        },
-        {
-          "id": "jkl101",
-          "name": "Mary Gordon"
-        }
-      ],
-      "time": "0:00",
-      "user": {
-        "id": "abc123",
-        "name": "Constance"
-      }
-    },
-    {
-      "id": 940131,
-      "title": "Evento de eduacion",
-      "date": "2021-01-02T21:33:00.000Z",
-      "location": "Chile",
-      "description": "Eduacion de los eventos",
-      "category": "education",
-      "organizer": "Juan",
-      "attendees": [
-        {
-          "id": "abc123",
-          "name": "Deven Jahr"
-        },
-        {
-          "id": "ghi789",
-          "name": "Beth Swanson"
-        },
-        {
-          "id": "jkl101",
-          "name": "Mary Gordon"
-        }
-      ],
-      "time": "14:00",
-      "user": {
-        "id": "abc123",
-        "name": "Constance"
-      }
-    },
-    {
-      "id": 924305,
-      "title": "Evento de Comunidad",
-      "date": "2021-01-22T21:44:00.000Z",
-      "location": "Chile",
-      "description": "Comunidad de los evnetos",
-      "category": "community",
-      "organizer": "Juan",
-      "attendees": [
-        {
-          "id": "abc123",
-          "name": "Deven Jahr"
-        },
-        {
-          "id": "ghi789",
-          "name": "Beth Swanson"
-        },
-        {
-          "id": "jkl101",
-          "name": "Mary Gordon"
-        }
-      ],
-      "time": "6:00",
-      "user": {
-        "id": "abc123",
-        "name": "Constance"
-      }
-    },
-    {
-      "id": 517485,
-      "title": "Housing's event",
-      "date": "2021-01-26T22:12:00.000Z",
-      "location": "Chile",
-      "description": "Evento de Housing Local",
-      "category": "housing",
+      "description": "evento para animales",
+      "category": "animal welfare",
       "organizer": "Juan",
       "attendees": [
         {
@@ -421,69 +337,13 @@
       }
     },
     {
-      "id": 864815,
-      "title": "Nuevo evento de prueba",
-      "date": "2021-02-04T22:43:00.000Z",
-      "location": "Venezuela",
-      "description": "Nuevo evento de prueba parte n2",
-      "category": "animal welfare",
-      "organizer": "Duran",
-      "attendees": [
-        {
-          "id": "abc123",
-          "name": "Deven Jahr"
-        },
-        {
-          "id": "ghi789",
-          "name": "Beth Swanson"
-        },
-        {
-          "id": "jkl101",
-          "name": "Mary Gordon"
-        }
-      ],
-      "time": "24:00",
-      "user": {
-        "id": "abc123",
-        "name": "Constance"
-      }
-    },
-    {
-      "id": 356790,
-      "title": "evento nuevo con modulo",
-      "date": "2021-01-09T23:51:00.000Z",
-      "location": "Venezuela",
-      "description": "evento con el modulo de usuario prueba",
-      "category": "animal welfare",
-      "organizer": "Juan D",
-      "attendees": [
-        {
-          "id": "abc123",
-          "name": "Deven Jahr"
-        },
-        {
-          "id": "ghi789",
-          "name": "Beth Swanson"
-        },
-        {
-          "id": "jkl101",
-          "name": "Mary Gordon"
-        }
-      ],
-      "time": "10:00",
-      "user": {
-        "id": "abc123",
-        "name": "Constance"
-      }
-    },
-    {
-      "id": 305570,
-      "title": "nuevo evento de sustaninability",
-      "date": "2021-02-05T00:00:00.000Z",
+      "id": 498316,
+      "title": "Community Event",
+      "date": "2021-01-01T03:34:00.000Z",
       "location": "Chile",
-      "description": "evento nuevo 21:01",
-      "category": "sustainability",
-      "organizer": "JD",
+      "description": "Evento para la comunidad",
+      "category": "community",
+      "organizer": "Juan",
       "attendees": [
         {
           "id": "abc123",
@@ -498,20 +358,20 @@
           "name": "Mary Gordon"
         }
       ],
-      "time": "17:00",
+      "time": "18:00",
       "user": {
         "id": "abc123",
         "name": "Constance"
       }
     },
     {
-      "id": 267440,
-      "title": "Housing Event New",
-      "date": "2021-01-06T00:24:00.000Z",
+      "id": 546654,
+      "title": "Event nature",
+      "date": "2021-01-08T03:35:00.000Z",
       "location": "Chile",
-      "description": "eventModule eventModule eventModule",
-      "category": "housing",
-      "organizer": "JDC",
+      "description": "Evento de la naturaleza",
+      "category": "nature",
+      "organizer": "Juan",
       "attendees": [
         {
           "id": "abc123",
@@ -526,7 +386,7 @@
           "name": "Mary Gordon"
         }
       ],
-      "time": "4:00",
+      "time": "16:00",
       "user": {
         "id": "abc123",
         "name": "Constance"
